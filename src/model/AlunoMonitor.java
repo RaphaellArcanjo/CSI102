@@ -7,7 +7,7 @@ public class AlunoMonitor extends Pessoa {
 
 
     public AlunoMonitor(String nome) {
-        super(nome); // Chama o construtor da classe pai (Pessoa)
+        super(nome);
     }
 
 
