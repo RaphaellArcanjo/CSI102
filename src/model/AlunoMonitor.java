@@ -1,8 +1,5 @@
-/**
- * Classe de dados para o Aluno Monitor.
- * Herda de Pessoa para obter o atributo 'nome'.
- * Responsável por armazenar as informações do monitor.
- */
+package model;
+
 public class AlunoMonitor extends Pessoa {
 
     private Disciplina disciplina;

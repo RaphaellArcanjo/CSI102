@@ -1,3 +1,5 @@
+package model;
+
 public class Professor extends Pessoa {
     private Disciplina[] disciplinas;
     private int numDisciplinas;

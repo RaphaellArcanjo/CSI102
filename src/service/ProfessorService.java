@@ -1,3 +1,6 @@
+import model.AlunoMonitor;
+import model.Professor;
+
 public class ProfessorService {
 
     // --- Métodos ---
