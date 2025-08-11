@@ -3,7 +3,6 @@ import model.Professor;
 
 public class ProfessorService {
 
-    // --- Métodos ---
 
     public void solicitarBolsa(Professor professor, Disciplina disciplina, String tipoBolsa) {
         System.out.println("LOGICA DE SERVICO: Prof(a). " + professor.getNome() + 
