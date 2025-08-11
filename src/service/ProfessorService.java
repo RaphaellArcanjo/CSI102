@@ -1,7 +1,5 @@
 public class ProfessorService {
 
-    // --- Métodos ---
-
     public void solicitarBolsa(Professor professor, Disciplina disciplina, String tipoBolsa) {
         System.out.println("LOGICA DE SERVICO: Prof(a). " + professor.getNome() + 
                            " solicitou uma bolsa " + tipoBolsa + 
@@ -19,7 +17,7 @@ public class ProfessorService {
 
     public void cadastrarHorarioAtendimento(Disciplina disciplina, String dia, String hora, String local) {
         String novoHorario = dia + " das " + hora + " no local: " + local;
-        disciplina.adicionarHorario(novoHorario); // Supondo que Disciplina tenha este método
+        disciplina.adicionarHorario(novoHorario);
         System.out.println("LOGICA DE SERVICO: Novo horário de atendimento para " + 
                            disciplina.getNome() + " cadastrado: " + novoHorario);
     }
