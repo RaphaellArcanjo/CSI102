@@ -6,7 +6,6 @@ public class ProfessorService {
         System.out.println("LOGICA DE SERVICO: Prof(a). " + professor.getNome() + 
                            " solicitou uma bolsa " + tipoBolsa + 
                            " para a disciplina " + disciplina.getNome() + ".");
-        // Aqui entraria a comunicação com  a classe PROGRAD
     }
 
     public void indicarMonitor(Professor professor, Disciplina disciplina, AlunoMonitor monitor) {
