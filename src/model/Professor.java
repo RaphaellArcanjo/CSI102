@@ -6,7 +6,7 @@ public class Professor extends Pessoa {
     private static final int MAX_DISCIPLINAS = 10;
 
     public Professor(String nome) {
-        super(nome); // Chama o construtor da classe pai Pessoa
+        super(nome);
         this.disciplinas = new Disciplina[MAX_DISCIPLINAS];
         this.numDisciplinas = 0;
     }
