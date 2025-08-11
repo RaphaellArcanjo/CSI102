@@ -13,6 +13,5 @@ public abstract class Pessoa {
         this.nome = nome;
     }
 
-    // Método abstrato que força as classes filhas a se apresentarem
     public abstract void apresentar();
 }
