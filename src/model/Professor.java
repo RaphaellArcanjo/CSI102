@@ -1,27 +1,32 @@
 package model;
 
 public class Professor extends Pessoa {
-    private Disciplina[] disciplinas;
-    private int numDisciplinas;
-    private static final int MAX_DISCIPLINAS = 10;
+    private String siape;
+    private Departamento departamento;
 
-    public Professor(String nome) {
-        super(nome);
-        this.disciplinas = new Disciplina[MAX_DISCIPLINAS];
-        this.numDisciplinas = 0;
+    public Professor(String nome, String email, String cpf, String senha, String siape) {
+        super(nome, email, cpf, senha);
+        this.siape = siape;
     }
 
-    public Disciplina[] getDisciplinas() {
-        return this.disciplinas;
+    public String getSiape() {
+        return siape;
     }
 
-    public int getNumDisciplinas() {
-        return this.numDisciplinas;
+    public void setSiape(String siape) {
+        this.siape = siape;
     }
 
-    
+    public Departamento getDepartamento() {
+        return departamento;
+    }
+
+    public void setDepartamento(Departamento departamento) {
+        this.departamento = departamento;
+    }
+
     @Override
-    public void apresentar() {
-        System.out.println("Sou o Professor: " + this.nome);
+    public String toString() {
+        return "Professor [nome=" + getNome() + ", siape=" + siape + "]";
     }
 }

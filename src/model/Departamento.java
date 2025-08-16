@@ -1,27 +1,32 @@
 package model;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class Departamento {
     private String nome;
-    private List<Disciplina> listaDisciplinas;
+    private String sigla;
 
-    public Departamento(String nome) {
+    public Departamento(String nome, String sigla) {
         this.nome = nome;
-        this.listaDisciplinas = new ArrayList<>();
+        this.sigla = sigla;
     }
 
     public String getNome() {
         return nome;
     }
 
-    public List<Disciplina> getListaDisciplinas() {
-        return listaDisciplinas;
+    public void setNome(String nome) {
+        this.nome = nome;
     }
-    public void adicionarDisciplina(Disciplina disciplina) {
-        if (disciplina != null && !this.listaDisciplinas.contains(disciplina)) {
-            this.listaDisciplinas.add(disciplina);
-        }
+
+    public String getSigla() {
+        return sigla;
+    }
+
+    public void setSigla(String sigla) {
+        this.sigla = sigla;
+    }
+
+    @Override
+    public String toString() {
+        return "Departamento [nome=" + nome + ", sigla=" + sigla + "]";
     }
 }
