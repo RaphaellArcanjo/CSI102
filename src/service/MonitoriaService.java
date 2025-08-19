@@ -12,7 +12,7 @@ public class MonitoriaService {
     private final List<BolsaMonitoria> bolsas;
 
     public MonitoriaService() {
-        SistemaService dados = SistemaService.getInstance();
+        SistemaServiceSingleton dados = SistemaServiceSingleton.getInstance();
         this.alunos = dados.getAlunos();
         this.professores = dados.getProfessores();
         this.disciplinas = dados.getDisciplinas();

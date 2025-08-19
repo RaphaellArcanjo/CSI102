@@ -12,7 +12,7 @@ public class CadastroService {
     private final List<Disciplina> disciplinas;
 
     public CadastroService() {
-        SistemaService dados = SistemaService.getInstance();
+        SistemaServiceSingleton dados = SistemaServiceSingleton.getInstance();
         this.alunos = dados.getAlunos();
         this.professores = dados.getProfessores();
         this.departamentos = dados.getDepartamentos();

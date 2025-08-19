@@ -4,9 +4,9 @@ import java.util.ArrayList;
 import java.util.List;
 import model.*;
 
-public class SistemaService {
+public class SistemaServiceSingleton {
 
-    private static SistemaService instance;
+    private static SistemaServiceSingleton instance;
 
     private List<Aluno> alunos = new ArrayList<>();
     private List<Professor> professores = new ArrayList<>();
@@ -14,11 +14,11 @@ public class SistemaService {
     private List<Disciplina> disciplinas = new ArrayList<>();
     private List<BolsaMonitoria> bolsas = new ArrayList<>();
 
-    private SistemaService() {}
+    private SistemaServiceSingleton() {}
 
-    public static SistemaService getInstance() {
+    public static SistemaServiceSingleton getInstance() {
         if (instance == null) {
-            instance = new SistemaService();
+            instance = new SistemaServiceSingleton();
         }
         return instance;
     }

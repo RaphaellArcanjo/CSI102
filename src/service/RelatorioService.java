@@ -8,7 +8,7 @@ public class RelatorioService {
     private final List<BolsaMonitoria> bolsas;
 
     public RelatorioService() {
-        this.bolsas = SistemaService.getInstance().getBolsas();
+        this.bolsas = SistemaServiceSingleton.getInstance().getBolsas();
     }
 
     public String gerarRelatorioHorariosPorDisciplina() {
