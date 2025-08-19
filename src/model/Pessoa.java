@@ -4,13 +4,11 @@ public abstract class Pessoa {
     private String nome;
     private String email;
     private String cpf;
-    private String senha;
 
-    public Pessoa(String nome, String email, String cpf, String senha) {
+    public Pessoa(String nome, String email, String cpf) {
         this.nome = nome;
         this.email = email;
         this.cpf = cpf;
-        this.senha = senha;
     }
 
     public String getNome() {
@@ -37,11 +35,4 @@ public abstract class Pessoa {
         this.cpf = cpf;
     }
 
-    public String getSenha() {
-        return senha;
-    }
-
-    public void setSenha(String senha) {
-        this.senha = senha;
-    }
 }

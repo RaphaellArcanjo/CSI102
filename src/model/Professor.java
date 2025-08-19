@@ -4,8 +4,8 @@ public class Professor extends Pessoa {
     private String siape;
     private Departamento departamento;
 
-    public Professor(String nome, String email, String cpf, String senha, String siape) {
-        super(nome, email, cpf, senha);
+    public Professor(String nome, String email, String cpf, String siape) {
+        super(nome, email, cpf);
         this.siape = siape;
     }
 

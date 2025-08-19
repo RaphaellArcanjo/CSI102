@@ -4,8 +4,8 @@ public class Aluno extends Pessoa {
     private String matricula;
     private String curso;
 
-    public Aluno(String nome, String email, String cpf, String senha, String matricula, String curso) {
-        super(nome, email, cpf, senha);
+    public Aluno(String nome, String email, String cpf, String matricula, String curso) {
+        super(nome, email, cpf);
         this.matricula = matricula;
         this.curso = curso;
     }

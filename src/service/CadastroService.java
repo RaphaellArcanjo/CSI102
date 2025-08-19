@@ -25,16 +25,16 @@ public class CadastroService {
         return depto;
     }
 
-    public Aluno cadastrarAluno(String nome, String email, String cpf, String senha, String matricula, String curso) {
-        Aluno aluno = new Aluno(nome, email, cpf, senha, matricula, curso);
+    public Aluno cadastrarAluno(String nome, String email, String cpf, String matricula, String curso) {
+        Aluno aluno = new Aluno(nome, email, cpf, matricula, curso);
         alunos.add(aluno);
         return aluno;
     }
 
-    public Professor cadastrarProfessor(String nome, String email, String cpf, String senha, String siape, String siglaDepartamento) throws RegraDeNegocioException {
+    public Professor cadastrarProfessor(String nome, String email, String cpf, String siape, String siglaDepartamento) throws RegraDeNegocioException {
         Optional<Departamento> depto = encontrarDepartamentoPelaSigla(siglaDepartamento);
         if (depto.isPresent()) {
-            Professor prof = new Professor(nome, email, cpf, senha, siape);
+            Professor prof = new Professor(nome, email, cpf, siape);
             prof.setDepartamento(depto.get());
             professores.add(prof);
             return prof;
