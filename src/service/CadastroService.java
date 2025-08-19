@@ -31,7 +31,7 @@ public class CadastroService {
         return aluno;
     }
 
-    public Professor cadastrarProfessor(String nome, String email, String cpf, String senha, String siape, String siglaDepartamento) throws Exception {
+    public Professor cadastrarProfessor(String nome, String email, String cpf, String senha, String siape, String siglaDepartamento) throws RegraDeNegocioException {
         Optional<Departamento> depto = encontrarDepartamentoPelaSigla(siglaDepartamento);
         if (depto.isPresent()) {
             Professor prof = new Professor(nome, email, cpf, senha, siape);
@@ -39,10 +39,10 @@ public class CadastroService {
             professores.add(prof);
             return prof;
         }
-        throw new Exception("Erro: Departamento " + siglaDepartamento + " não encontrado.");
+        throw new RegraDeNegocioException("Erro: Departamento " + siglaDepartamento + " não encontrado.");
     }
 
-    public Disciplina cadastrarDisciplina(String codigo, String nome, int cargaHoraria, String siglaDepartamento) throws Exception {
+    public Disciplina cadastrarDisciplina(String codigo, String nome, int cargaHoraria, String siglaDepartamento) throws RegraDeNegocioException {
         Optional<Departamento> depto = encontrarDepartamentoPelaSigla(siglaDepartamento);
         if (depto.isPresent()) {
             Disciplina disciplina = new Disciplina(codigo, nome, cargaHoraria);
@@ -50,7 +50,7 @@ public class CadastroService {
             disciplinas.add(disciplina);
             return disciplina;
         }
-        throw new Exception("Erro: Departamento " + siglaDepartamento + " não encontrado.");
+        throw new RegraDeNegocioException("Erro: Departamento " + siglaDepartamento + " não encontrado.");
     }
 
     private Optional<Departamento> encontrarDepartamentoPelaSigla(String sigla) {
