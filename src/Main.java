@@ -22,7 +22,7 @@ public class Main {
             exibirMenu();
             try {
                 opcao = scanner.nextInt();
-                scanner.nextLine(); // Consome a quebra de linha
+                scanner.nextLine();
 
                 switch (opcao) {
                     case 1:
@@ -60,8 +60,8 @@ public class Main {
                 }
             } catch (InputMismatchException e) {
                 System.out.println("Erro: Por favor, digite um número válido para a opção.");
-                scanner.nextLine(); // Limpa o buffer do scanner
-                opcao = -1; // Reseta a opção para continuar no loop
+                scanner.nextLine();
+                opcao = -1;
             }
             pressioneEnterParaContinuar();
         }
@@ -69,21 +69,25 @@ public class Main {
     }
 
     private static void exibirMenu() {
-        System.out.println("\n--- Sistema de Gestão de Monitorias (ICEA/UFOP) ---");
-        System.out.println("=============== MENU DO ADMINISTRADOR ===============");
-        System.out.println("1. Cadastrar Departamento");
-        System.out.println("2. Cadastrar Disciplina");
-        System.out.println("3. Cadastrar Professor");
-        System.out.println("4. Cadastrar Aluno");
-        System.out.println("-----------------------------------------------------");
-        System.out.println("5. Solicitar Bolsa de Monitoria");
-        System.out.println("6. Cadastrar Horário de Atendimento");
-        System.out.println("7. Consultar Monitoria por Aluno");
-        System.out.println("-----------------------------------------------------");
-        System.out.println("8. Relatório: Horários por Disciplina");
-        System.out.println("9. Relatório: Aluno/Professor por Disciplina");
-        System.out.println("-----------------------------------------------------");
-        System.out.println("0. Sair");
+        System.out.println("\n╔═══════════════════════════════════════════════╗");
+        System.out.println("║  Sistema de Gestão de Monitorias (ICEA/UFOP)  ║");
+        System.out.println("╠═══════════════════════════════════════════════╣");
+        System.out.println("║          MENU DO ADMINISTRADOR                ║");
+        System.out.println("╠═══════════════════════════════════════════════╣");
+        System.out.println("║ 1. Cadastrar Departamento                     ║");
+        System.out.println("║ 2. Cadastrar Disciplina                       ║");
+        System.out.println("║ 3. Cadastrar Professor                        ║");
+        System.out.println("║ 4. Cadastrar Aluno                            ║");
+        System.out.println("║-----------------------------------------------║");
+        System.out.println("║ 5. Solicitar Bolsa de Monitoria               ║");
+        System.out.println("║ 6. Cadastrar Horário de Atendimento           ║");
+        System.out.println("║ 7. Consultar Monitoria por Aluno              ║");
+        System.out.println("║-----------------------------------------------║");
+        System.out.println("║ 8. Relatório: Horários por Disciplina         ║");
+        System.out.println("║ 9. Relatório: Aluno/Professor por Disciplina  ║");
+        System.out.println("║-----------------------------------------------║");
+        System.out.println("║ 0. Sair                                       ║");
+        System.out.println("╚═══════════════════════════════════════════════╝");
         System.out.print("Escolha uma opção: ");
     }
 
@@ -115,7 +119,7 @@ public class Main {
             System.out.println("Erro no cadastro: " + e.getMessage());
         } catch (InputMismatchException e) {
             System.out.println("Erro: A carga horária deve ser um número inteiro.");
-            scanner.nextLine(); // Limpa o buffer
+            scanner.nextLine();
         }
     }
 
@@ -198,7 +202,7 @@ public class Main {
         Optional<BolsaMonitoria> bolsaOpt = monitoriaService.consultarMonitoriaPorAluno(matricula);
         if (bolsaOpt.isPresent()) {
             System.out.println("Monitoria encontrada:");
-            System.out.println(bolsaOpt.get().toString());
+            System.out.println(bolsaOpt.get());
         } else {
             System.out.println("Nenhuma monitoria encontrada para o aluno com a matrícula '" + matricula + "'.");
         }
